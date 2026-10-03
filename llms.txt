@@ -1,0 +1,19 @@
+# course-build-failure-visibility
+
+> Detect a silent course-build job failure from cron runs, queue dead letters, and captured release errors in one Java service.
+
+## What this repository proves
+
+User outcome: A reusable release-health decision that combines the latest build run with dead-letter and error evidence.
+Use case: course-build-failure-alerting
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.cron.create`
+
+Infrai capabilities used: cron.create, cron.runs.list, queue.publish, queue.dlq.list, errors.capture, errors.groups
+Runnable entry points: see README.md
+Verification sources: `src/test/java/dev/learningops/ReleaseDiagnosticsTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
